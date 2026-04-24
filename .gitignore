@@ -36,3 +36,5 @@ data/*.sqlite
 
 # Node.js
 node_modules/
+
+env
