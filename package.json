@@ -1,0 +1,22 @@
+{
+  "name": "fraud_detection_app",
+  "version": "1.0.0",
+  "description": "A production-ready, multi-agent AI system designed to detect fraud, scams, and phishing attempts with high precision. Built using **LangGraph**, **FastAPI**, and **Google Gemini**, this system mimics human analysis by orchestrating specialized agents to scan, research, and reason through suspicious activities.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.3.1",
+    "@capacitor/cli": "^8.3.1",
+    "@capacitor/core": "^8.3.1",
+    "capacitor-notifications-listener": "^0.5.1"
+  }
+}

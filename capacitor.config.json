@@ -1,0 +1,13 @@
+{
+  "appId": "com.shieldai.frauddetector",
+  "appName": "ShieldAI",
+  "webDir": "frontend",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "NotificationsListener": {
+      "cacheNotifications": true
+    }
+  }
+}

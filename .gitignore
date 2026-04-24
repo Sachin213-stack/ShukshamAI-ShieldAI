@@ -1,0 +1,38 @@
+# Environment variables (contains API keys - NEVER commit this)
+.env
+
+# Python virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Data files (large datasets should not be in Git)
+data/*.csv
+data/*.db
+data/*.sqlite
+
+# Node.js
+node_modules/

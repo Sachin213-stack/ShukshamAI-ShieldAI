@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ShieldAI</string>
+    <string name="title_activity_main">ShieldAI</string>
+    <string name="package_name">com.shieldai.frauddetector</string>
+    <string name="custom_url_scheme">com.shieldai.frauddetector</string>
+</resources>
