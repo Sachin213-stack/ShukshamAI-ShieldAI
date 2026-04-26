@@ -120,7 +120,7 @@ class TestPatternMatch:
         assert len(imp_flags) >= 1
 
     def test_impersonation_flag_kyc(self):
-        flags = invoke_tool(pattern_match, text="Your KC verification is pending. KYC Update needed.")
+        flags = invoke_tool(pattern_match, text="Your KYC verification is pending. KYC Update needed.")
         imp_flags = [f for f in flags if f.startswith("IMPERSONATION")]
         assert len(imp_flags) >= 1
 
