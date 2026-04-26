@@ -26,7 +26,7 @@
         <button id="settingsBtn" class="icon-btn" onclick="openSettings()" aria-label="Settings">⚙️</button>
         <button id="notifBtn" class="icon-btn" onclick="goNav('notifications')" aria-label="Notifications">
           🔔
-          <span class="notif-badge initially-hidden" id="notifBadge">0</span>
+          <span class="notif-badge hide-on-load" id="notifBadge">0</span>
         </button>
       </div>
     </header>
@@ -162,10 +162,10 @@
 
     <nav class="bottom-nav" role="navigation">
       <button class="nav-item active" id="nav-scan" onclick="goNav('scan')">Scan
-        <span id="queueBadge" class="alert-badge queue-badge initially-hidden">0</span>
+        <span id="queueBadge" class="alert-badge queue-badge hide-on-load">0</span>
       </button>
       <button class="nav-item" id="nav-notifications" onclick="goNav('notifications')">Alerts
-        <span class="alert-badge nav-notif-badge initially-hidden" id="navNotifBadge">0</span>
+        <span class="alert-badge nav-notif-badge hide-on-load" id="navNotifBadge">0</span>
       </button>
       <button class="nav-item" id="nav-history" onclick="goNav('history')">History</button>
       <button class="nav-item" id="nav-trace" onclick="goNav('trace')">AI Trace</button>

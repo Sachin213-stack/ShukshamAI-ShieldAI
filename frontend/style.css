@@ -12,6 +12,7 @@
   --safe: #28c984;
   --warn: #ffb74d;
   --border: #253452;
+  --alert-bg: #ff9500;
   --field-border: #2d4063;
   --result-header-bg: #1b2a45;
   --overlay-bg: rgba(6, 12, 21, 0.85);
@@ -382,7 +383,7 @@ button, input, textarea { font: inherit; }
 }
 .queue-badge { --alert-bg: #ff9500; }
 .nav-notif-badge { --alert-bg: var(--danger); }
-.initially-hidden { display: none; }
+.hide-on-load { display: none; }
 
 @media (max-width: 390px) {
   .tab, .nav-item, .type-pill { font-size: 11px; }
