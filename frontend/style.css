@@ -371,6 +371,7 @@ button, input, textarea { font: inherit; }
   position: absolute;
   top: 2px;
   right: 10px;
+  display: flex;
   background: var(--alert-bg);
   color: #fff;
   font-size: 9px;
