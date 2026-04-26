@@ -3,157 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="ShieldAI - Agentic Fraud & Scam Detection. Analyze suspicious messages, links and calls with AI-powered multi-agent intelligence." />
-  <title>ShieldAI — Fraud Detector</title>
+  <meta name="description" content="ShieldAI Android fraud protection interface" />
+  <title>ShieldAI Android</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ===== MOBILE SHELL ===== -->
-  <div class="app-shell">
-
-    <!-- STATUS BAR -->
+  <div class="android-app">
     <div class="status-bar">
-      <span class="status-time" id="statusTime">10:50</span>
-      <div class="status-icons">
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor" opacity=".4"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor" opacity=".6"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor" opacity=".8"/><rect x="13.5" y="0" width="2.5" height="12" rx="1" fill="currentColor"/></svg>
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 2C10.8 2 13.3 3.2 15 5.1L13.3 6.8C12 5.4 10.1 4.5 8 4.5C5.9 4.5 4 5.4 2.7 6.8L1 5.1C2.7 3.2 5.2 2 8 2ZM8 6.5C9.5 6.5 10.8 7.1 11.8 8.1L10.1 9.8C9.5 9.3 8.8 9 8 9C7.2 9 6.5 9.3 5.9 9.8L4.2 8.1C5.2 7.1 6.5 6.5 8 6.5ZM8 11C8.8 11 9.5 11.7 9.5 12.5S8.8 14 8 14 6.5 13.3 6.5 12.5 7.2 11 8 11Z" fill="currentColor"/></svg>
-        <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="currentColor" opacity=".35"/><rect x="2" y="2" width="16" height="8" rx="2" fill="currentColor"/><path d="M23 4.5V7.5C23.8 7.2 24.5 6.7 24.5 6C24.5 5.3 23.8 4.8 23 4.5Z" fill="currentColor" opacity=".4"/></svg>
-      </div>
+      <span id="statusTime">00:00</span>
+      <span>ShieldAI</span>
     </div>
 
-    <!-- HEADER / NAVBAR -->
-    <header class="app-header">
-      <div class="header-left">
-        <div class="shield-logo">
-          <svg width="22" height="26" viewBox="0 0 22 26" fill="none">
-            <path d="M11 0L0 4.5V13C0 19.3 4.8 25.2 11 26C17.2 25.2 22 19.3 22 13V4.5L11 0Z" fill="url(#shieldGrad)"/>
-            <path d="M7 13L10 16L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <defs>
-              <linearGradient id="shieldGrad" x1="0" y1="0" x2="22" y2="26" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#6C63FF"/>
-                <stop offset="1" stop-color="#48C6EF"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div>
-          <div class="app-title">ShieldAI</div>
-          <div class="app-subtitle">Fraud Detector</div>
-        </div>
+    <header class="top-bar">
+      <div>
+        <h1>ShieldAI</h1>
+        <p>Android Fraud Protection</p>
       </div>
-      <button class="settings-btn" id="settingsBtn" onclick="openSettings()" aria-label="Settings">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-      </button>
-      <button class="notif-btn" id="notifBtn" onclick="goNav('notifications')" aria-label="Notifications">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        <span class="notif-badge" id="notifBadge" style="display:none">0</span>
-      </button>
+      <div class="top-actions">
+        <button id="settingsBtn" class="icon-btn" onclick="openSettings()" aria-label="Settings">⚙️</button>
+        <button id="notifBtn" class="icon-btn" onclick="goNav('notifications')" aria-label="Notifications" style="position:relative;">
+          🔔
+          <span class="notif-badge" id="notifBadge" style="display:none">0</span>
+        </button>
+      </div>
     </header>
 
-    <!-- SCROLLABLE CONTENT -->
+    <section class="stats-row" id="statsSection">
+      <article class="stat-card"><span>Total Scans</span><strong id="statTotal">—</strong></article>
+      <article class="stat-card"><span>Fraud Found</span><strong id="statFraud">—</strong></article>
+      <article class="stat-card"><span>Fraud Rate</span><strong id="statPct">—%</strong></article>
+    </section>
+
+    <div class="tab-bar" role="tablist">
+      <button class="tab active" id="tab-scan" role="tab" aria-selected="true" onclick="switchTab('scan')">Scan</button>
+      <button class="tab" id="tab-notifications" role="tab" aria-selected="false" onclick="switchTab('notifications')">Alerts</button>
+      <button class="tab" id="tab-history" role="tab" aria-selected="false" onclick="switchTab('history')">History</button>
+      <button class="tab" id="tab-trace" role="tab" aria-selected="false" onclick="switchTab('trace')">AI Trace</button>
+    </div>
+
     <main class="app-content">
-
-      <!-- STATS CARDS ROW -->
-      <section class="stats-row" id="statsSection">
-        <div class="stat-card stat-total">
-          <div class="stat-icon">📊</div>
-          <div class="stat-value" id="statTotal">—</div>
-          <div class="stat-label">Total Scans</div>
-        </div>
-        <div class="stat-card stat-fraud">
-          <div class="stat-icon">🚨</div>
-          <div class="stat-value" id="statFraud">—</div>
-          <div class="stat-label">Fraud Found</div>
-        </div>
-        <div class="stat-card stat-pct">
-          <div class="stat-icon">⚡</div>
-          <div class="stat-value" id="statPct">—%</div>
-          <div class="stat-label">Fraud Rate</div>
-        </div>
-      </section>
-
-      <!-- TAB BAR -->
-      <div class="tab-bar" role="tablist">
-        <button class="tab active" id="tab-scan" role="tab" aria-selected="true" onclick="switchTab('scan')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Scan
-        </button>
-        <button class="tab" id="tab-notifications" role="tab" aria-selected="false" onclick="switchTab('notifications')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-          Alerts
-        </button>
-        <button class="tab" id="tab-history" role="tab" aria-selected="false" onclick="switchTab('history')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 8 12 12 14 14"/><path d="M3.05 11a9 9 0 1 0 .5-4H1"/><polyline points="1 3 1 7 5 7"/></svg>
-          History
-        </button>
-        <button class="tab" id="tab-trace" role="tab" aria-selected="false" onclick="switchTab('trace')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          AI Trace
-        </button>
-      </div>
-
-      <!-- ===== SCAN TAB ===== -->
-      <div class="tab-panel active" id="panel-scan" role="tabpanel">
-
-        <!-- Input type selector -->
+      <section class="tab-panel active" id="panel-scan" role="tabpanel">
         <div class="input-type-row">
-          <button class="type-pill active" id="type-sms" onclick="setInputType('sms', this)">
-            <span>💬</span> SMS
-          </button>
-          <button class="type-pill" id="type-email" onclick="setInputType('email', this)">
-            <span>📧</span> Email
-          </button>
-          <button class="type-pill" id="type-call" onclick="setInputType('call', this)">
-            <span>📞</span> Call
-          </button>
-          <button class="type-pill" id="type-link" onclick="setInputType('link', this)">
-            <span>🔗</span> Link
-          </button>
+          <button class="type-pill active" id="type-sms" onclick="setInputType('sms', this)">SMS</button>
+          <button class="type-pill" id="type-email" onclick="setInputType('email', this)">Email</button>
+          <button class="type-pill" id="type-call" onclick="setInputType('call', this)">Call</button>
+          <button class="type-pill" id="type-link" onclick="setInputType('link', this)">Link</button>
         </div>
 
-        <!-- Scan Form -->
         <div class="scan-card">
-          <div class="scan-card-header">
-            <span id="inputTypeLabel">📱 Paste or type a suspicious SMS</span>
+          <div class="scan-card-header"><span id="inputTypeLabel">📱 Paste or type a suspicious SMS</span></div>
+
+          <div class="input-group">
+            <label class="input-label" for="senderInput">Sender / Source</label>
+            <input id="senderInput" class="input-field" type="text" maxlength="120" placeholder="e.g. +1-800-1234" autocomplete="off" />
           </div>
 
           <div class="input-group">
-            <label class="input-label" for="senderInput">Sender / Source ID</label>
-            <input
-              class="input-field"
-              id="senderInput"
-              type="text"
-              placeholder="e.g. +1-800-FRAUD, unknown@phish.com"
-              maxlength="120"
-              autocomplete="off"
-            />
-          </div>
-
-          <div class="input-group">
-            <label class="input-label" for="messageInput">Message Content</label>
-            <textarea
-              class="input-field textarea"
-              id="messageInput"
-              placeholder="Paste the suspicious message here..."
-              rows="5"
-              maxlength="2000"
-            ></textarea>
+            <label class="input-label" for="messageInput">Message</label>
+            <textarea id="messageInput" class="input-field textarea" rows="5" maxlength="2000" placeholder="Paste the suspicious message here..."></textarea>
             <div class="char-count"><span id="charCount">0</span> / 2000</div>
           </div>
 
-          <button class="scan-btn" id="scanBtn" onclick="runScan()">
-            <span class="scan-btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </span>
-            <span class="scan-btn-text">Analyze with AI</span>
-          </button>
+          <button class="scan-btn" id="scanBtn" onclick="runScan()">Analyze with AI</button>
         </div>
 
-        <!-- Result Card (hidden by default) -->
         <div class="result-card hidden" id="resultCard">
           <div class="result-header" id="resultHeader">
             <div class="result-verdict-icon" id="resultIcon">🛡️</div>
@@ -163,59 +79,36 @@
             </div>
           </div>
 
-          <!-- Confidence Gauge -->
           <div class="confidence-section">
-            <div class="confidence-label">
-              <span>Confidence</span>
-              <span class="confidence-pct" id="confPct">0%</span>
-            </div>
-            <div class="gauge-track">
-              <div class="gauge-fill" id="gaugeFill" style="width:0%"></div>
-            </div>
+            <div class="confidence-label"><span>Confidence</span><span class="confidence-pct" id="confPct">0%</span></div>
+            <div class="gauge-track"><div class="gauge-fill" id="gaugeFill" style="width:0%"></div></div>
           </div>
 
-          <!-- Risk Badges -->
           <div class="badge-row" id="badgeRow"></div>
 
-          <!-- Analysis Tabs inside result -->
           <div class="result-tabs">
             <button class="r-tab active" onclick="switchResultTab('reasoning', this)">Reasoning</button>
             <button class="r-tab" onclick="switchResultTab('evidence', this)">Evidence</button>
             <button class="r-tab" onclick="switchResultTab('urls', this)">URLs</button>
           </div>
 
-          <div class="r-panel active" id="r-reasoning">
-            <p class="reason-text" id="reasonText">—</p>
-          </div>
-          <div class="r-panel" id="r-evidence">
-            <p class="reason-text" id="evidenceText">—</p>
-          </div>
-          <div class="r-panel" id="r-urls">
-            <div id="urlsList" class="urls-list"></div>
-          </div>
+          <div class="r-panel active" id="r-reasoning"><p class="reason-text" id="reasonText">—</p></div>
+          <div class="r-panel" id="r-evidence"><p class="reason-text" id="evidenceText">—</p></div>
+          <div class="r-panel" id="r-urls"><div id="urlsList" class="urls-list"></div></div>
 
-          <button class="trace-link" id="traceLink" onclick="viewTrace()">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            View full agent trace
-          </button>
+          <button class="trace-link" id="traceLink" onclick="viewTrace()">View full agent trace</button>
         </div>
+      </section>
 
-      </div><!-- /panel-scan -->
-
-      <!-- ===== NOTIFICATIONS TAB ===== -->
-      <div class="tab-panel" id="panel-notifications" role="tabpanel">
-
-        <!-- Permission Banner -->
+      <section class="tab-panel" id="panel-notifications" role="tabpanel">
         <div class="notif-permission-banner" id="notifPermBanner">
-          <div class="notif-perm-icon">🔔</div>
           <div class="notif-perm-text">
             <strong>Notification Access Required</strong>
-            <p>Grant permission to read incoming notifications and auto-detect fraud in real time.</p>
+            <p>Grant access to monitor SMS and app alerts in real time.</p>
           </div>
           <button class="notif-perm-btn" id="grantPermBtn" onclick="requestNotifPermission()">Grant Access</button>
         </div>
 
-        <!-- Controls Row -->
         <div class="notif-controls">
           <div class="notif-controls-left">
             <span class="notif-feed-title">Live Feed</span>
@@ -229,31 +122,23 @@
                 <span class="toggle-slider"></span>
               </div>
             </label>
-            <button class="notif-clear-btn" onclick="clearNotifications()" title="Clear all">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-            </button>
+            <button class="notif-clear-btn" onclick="clearNotifications()">Clear</button>
           </div>
         </div>
 
-        <!-- Notification Feed -->
         <div class="notif-feed" id="notifFeed">
-          <!-- Empty state -->
           <div class="notif-empty" id="notifEmpty">
             <div class="notif-empty-icon">📡</div>
             <p>Waiting for notifications…</p>
-            <p class="notif-empty-sub">Incoming SMS, WhatsApp, banking alerts and more will appear here automatically.</p>
+            <p class="notif-empty-sub">Incoming notifications will appear here.</p>
           </div>
         </div>
+      </section>
 
-      </div><!-- /panel-notifications -->
-
-      <!-- ===== HISTORY TAB ===== -->
-      <div class="tab-panel" id="panel-history" role="tabpanel">
+      <section class="tab-panel" id="panel-history" role="tabpanel">
         <div class="history-header">
           <span class="history-title">Recent Scans</span>
-          <button class="refresh-btn" onclick="loadHistory()" aria-label="Refresh">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5H1"/></svg>
-          </button>
+          <button class="refresh-btn" onclick="loadHistory()">Refresh</button>
         </div>
         <div class="history-list" id="historyList">
           <div class="loading-state" id="historyLoader">
@@ -261,110 +146,74 @@
             <p>Loading history…</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- ===== AI TRACE TAB ===== -->
-      <div class="tab-panel" id="panel-trace" role="tabpanel">
+      <section class="tab-panel" id="panel-trace" role="tabpanel">
         <div class="trace-empty" id="traceEmpty">
           <div class="trace-empty-icon">🤖</div>
-          <p>Run a scan first to see the<br/>multi-agent reasoning trace.</p>
+          <p>Run a scan first to view the AI agent pipeline.</p>
         </div>
         <div class="trace-container hidden" id="traceContainer">
           <div class="trace-scan-info" id="traceScanInfo"></div>
           <div class="agent-pipeline" id="agentPipeline"></div>
         </div>
-      </div>
+      </section>
+    </main>
 
-    </main><!-- /app-content -->
-
-    <!-- BOTTOM NAV -->
     <nav class="bottom-nav" role="navigation">
-      <button class="nav-item active" id="nav-scan" onclick="goNav('scan')" style="position:relative">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>Scan</span>
-        <span id="queueBadge" style="display:none;position:absolute;top:2px;right:18px;background:#ff9500;color:#fff;font-size:9px;font-weight:800;border-radius:50%;width:15px;height:15px;align-items:center;justify-content:center;border:2px solid var(--bg)">0</span>
+      <button class="nav-item active" id="nav-scan" onclick="goNav('scan')" style="position:relative">Scan
+        <span id="queueBadge" style="display:none;position:absolute;top:2px;right:10px;background:#ff9500;color:#fff;font-size:9px;font-weight:800;border-radius:50%;width:15px;height:15px;align-items:center;justify-content:center;">0</span>
       </button>
-      <button class="nav-item" id="nav-notifications" onclick="goNav('notifications')" style="position:relative">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        <span>Alerts</span>
-        <span class="nav-notif-badge" id="navNotifBadge" style="display:none;position:absolute;top:2px;right:18px;background:var(--danger);color:#fff;font-size:9px;font-weight:800;border-radius:50%;width:15px;height:15px;align-items:center;justify-content:center;border:2px solid var(--bg)">0</span>
+      <button class="nav-item" id="nav-notifications" onclick="goNav('notifications')" style="position:relative">Alerts
+        <span class="nav-notif-badge" id="navNotifBadge" style="display:none;position:absolute;top:2px;right:10px;background:var(--danger);color:#fff;font-size:9px;font-weight:800;border-radius:50%;width:15px;height:15px;align-items:center;justify-content:center;">0</span>
       </button>
-      <button class="nav-item" id="nav-history" onclick="goNav('history')">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 8 12 12 14 14"/><path d="M3.05 11a9 9 0 1 0 .5-4H1"/><polyline points="1 3 1 7 5 7"/></svg>
-        <span>History</span>
-      </button>
-      <button class="nav-item" id="nav-trace" onclick="goNav('trace')">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span>AI Trace</span>
-      </button>
+      <button class="nav-item" id="nav-history" onclick="goNav('history')">History</button>
+      <button class="nav-item" id="nav-trace" onclick="goNav('trace')">AI Trace</button>
     </nav>
+  </div>
 
-  </div><!-- /app-shell -->
-
-  <!-- TOAST -->
   <div class="toast" id="toast"></div>
 
-  <!-- SETTINGS MODAL -->
   <div class="modal-backdrop hidden" id="settingsModal" onclick="closeSettings(event)">
     <div class="modal-card" role="dialog" aria-label="Settings">
       <div class="modal-header">
-        <span>⚙️ Backend Settings</span>
+        <span>Backend Settings</span>
         <button class="modal-close" onclick="closeSettings()">✕</button>
       </div>
       <div class="modal-body">
-        <p class="modal-hint">Set your FastAPI server address. On the same Wi-Fi as your PC? Use your PC's local IP (e.g. <code>192.168.1.x</code>).</p>
+        <p class="modal-hint">Set your API URL (example: 192.168.1.10:8000).</p>
         <label class="input-label" for="apiUrlInput">API Base URL</label>
         <input class="input-field" id="apiUrlInput" type="url" placeholder="http://192.168.1.100:8000" />
-        <div class="modal-tip">💡 Run <code>ipconfig</code> on your PC to find the IP address.</div>
 
         <div class="settings-divider"></div>
 
         <label class="input-label">Notification Monitoring</label>
         <div class="settings-row">
-          <span class="settings-row-label">🔔 Auto-scan notifications</span>
+          <span class="settings-row-label">Auto-scan notifications</span>
           <div class="toggle-switch">
             <input type="checkbox" id="settingsAutoScan" onchange="toggleAutoScan(this.checked)" />
             <span class="toggle-slider"></span>
           </div>
         </div>
         <div class="settings-row">
-          <span class="settings-row-label">🔊 Fraud alert sound</span>
+          <span class="settings-row-label">Fraud alert sound</span>
           <div class="toggle-switch">
             <input type="checkbox" id="settingsAlertSound" onchange="toggleAlertSound(this.checked)" />
             <span class="toggle-slider"></span>
           </div>
         </div>
-        <div class="modal-tip" style="margin-top:8px">📱 Notification reading requires the app to be installed as a native Android app via Capacitor.</div>
       </div>
-      <div class="modal-footer">
-        <button class="modal-save-btn" onclick="saveSettings()">Save &amp; Connect</button>
-      </div>
+      <div class="modal-footer"><button class="modal-save-btn" onclick="saveSettings()">Save & Connect</button></div>
     </div>
   </div>
 
-  <!-- LOADING OVERLAY -->
   <div class="scan-overlay hidden" id="scanOverlay">
     <div class="scan-overlay-card">
-      <div class="ai-spinner">
-        <div class="ai-ring ring1"></div>
-        <div class="ai-ring ring2"></div>
-        <div class="ai-ring ring3"></div>
-        <div class="ai-core">🛡️</div>
-      </div>
       <div class="overlay-title">AI Agents Working…</div>
       <div class="agent-steps" id="overlaySteps">
-        <div class="agent-step active" id="step-scanner">
-          <span class="step-dot"></span>
-          <span>Scanner Agent</span>
-        </div>
-        <div class="agent-step" id="step-researcher">
-          <span class="step-dot"></span>
-          <span>Researcher Agent</span>
-        </div>
-        <div class="agent-step" id="step-reasoner">
-          <span class="step-dot"></span>
-          <span>Reasoner Agent</span>
-        </div>
+        <div class="agent-step active" id="step-scanner"><span class="step-dot"></span><span>Scanner Agent</span></div>
+        <div class="agent-step" id="step-researcher"><span class="step-dot"></span><span>Researcher Agent</span></div>
+        <div class="agent-step" id="step-reasoner"><span class="step-dot"></span><span>Reasoner Agent</span></div>
       </div>
     </div>
   </div>
