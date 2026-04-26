@@ -1,4 +1,5 @@
 :root {
+  --app-max-width: 520px;
   --bg: #0b1220;
   --surface: #131d31;
   --surface-2: #1c2942;
@@ -23,7 +24,7 @@ button, input, textarea { font: inherit; }
 
 .android-app {
   min-height: 100dvh;
-  max-width: 520px;
+  max-width: var(--app-max-width);
   margin: 0 auto;
   padding: 8px 12px 86px;
   display: flex;
@@ -54,6 +55,7 @@ button, input, textarea { font: inherit; }
 .icon-btn {
   width: 38px; height: 38px; border-radius: 12px; border: 1px solid var(--border);
   background: var(--surface); color: var(--text); cursor: pointer;
+  position: relative;
 }
 
 .notif-badge {
@@ -279,7 +281,7 @@ button, input, textarea { font: inherit; }
 .bottom-nav {
   position: fixed;
   left: 0; right: 0; bottom: 0;
-  max-width: 520px;
+  max-width: var(--app-max-width);
   margin: 0 auto;
   background: rgba(15, 24, 40, 0.95);
   backdrop-filter: blur(8px);
@@ -326,7 +328,7 @@ button, input, textarea { font: inherit; }
   padding: 16px;
   z-index: 10000;
 }
-.modal-card { width: min(520px, 100%); }
+.modal-card { width: min(var(--app-max-width), 100%); }
 .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .modal-close { border: 0; background: transparent; color: var(--text2); font-size: 20px; cursor: pointer; }
 .modal-hint { margin: 0 0 10px; color: var(--text2); font-size: 13px; }
@@ -364,11 +366,11 @@ button, input, textarea { font: inherit; }
 
 .nav-item { position: relative; }
 
-.queue-badge,
-.nav-notif-badge {
+.alert-badge {
   position: absolute;
   top: 2px;
   right: 10px;
+  background: var(--alert-bg);
   color: #fff;
   font-size: 9px;
   font-weight: 800;
@@ -378,8 +380,9 @@ button, input, textarea { font: inherit; }
   align-items: center;
   justify-content: center;
 }
-.queue-badge { background: #ff9500; }
-.nav-notif-badge { background: var(--danger); }
+.queue-badge { --alert-bg: #ff9500; }
+.nav-notif-badge { --alert-bg: var(--danger); }
+.initially-hidden { display: none; }
 
 @media (max-width: 390px) {
   .tab, .nav-item, .type-pill { font-size: 11px; }
